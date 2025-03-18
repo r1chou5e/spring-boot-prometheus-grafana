@@ -6,5 +6,5 @@ RUN gradle build --no-daemon
 FROM fabric8/java-alpine-openjdk8-jdk
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/app-with-metrics.jar
 WORKDIR /app
-EXPOSE 8080
+EXPOSE 8081
 CMD ["java", "-Dspring.profiles.active=local","-jar", "app-with-metrics.jar"]
